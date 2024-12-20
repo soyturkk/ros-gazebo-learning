@@ -1,0 +1,17 @@
+ros da turtle hareket ettirmek için adımlar:
+roscore
+rosrun turtlesim turtlesim_node
+rostopic info /turtle1/cmd_vel
+rosrun turtlesim turtle_teleop_key
+hareket eksenlerini görmek için:
+rostopic echo /turtle1/cmd_vel
+verdiğimiz komuta gitmesi için:
+rostopic pub /turtle1/cmd_vel geometry_msgs/Twist
+-----------------------------------------------------
+topic: düğümlerin üzerinde mesaj alış verişi yaptığı veri yolu
+rosta parametreleri ayarladıktan sonra kaydetmek isteyebiliriz kaydetmek için:
+rosparam dump test.yaml yazıyoruz
+geri getirmek için: rosparam load "dosya adı"
+rosparam get / ile kontrol ediyoruz.
+rosservice call /clear
+
