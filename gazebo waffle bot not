@@ -1,0 +1,30 @@
+export TURTLEBOT3_MODEL=waffle_pi
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py (turtle botu gazebo ile açar)
+ros2 run rqt_image_view rqt_image_view (camera open)
+ros2 topic echo /camera/image_raw (camera controll working or not?)
+
+ros2 kamera yüklü mü?
+Aşağıdaki paketlerin kurulu olması gerekir:
+
+sudo apt install ros-<ros2_distro>-turtlebot3*
+
+Örnek:
+
+sudo apt install ros-humble-turtlebot3*
+
+Sonrasında tekrar:
+
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+ros2 topic list
+---------------------------------------------------------------
+Gazebo’yu başlat: Aşağıdaki komutla TurtleBot3’ün Gazebo simülasyonunu başlatabilirsin:
+
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+
+Teleop komutunu çalıştır: Aşağıdaki komut ile TurtleBot3'ü klavye ile kontrol edebilirsin:
+
+ros2 run turtlebot3_teleop teleop_keyboard
+
+Eğer robotun durumu hakkında bilgi almak istersen, şu komutu çalıştırabilirsin:
+
+ros2 topic echo /turtlebot3/odometry
